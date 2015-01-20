@@ -1,6 +1,7 @@
 # catregater
 MEAN stack reddit cat image scraper.
-(http://i.imgur.com/NUyttbn.gif)
+
+![[heavy breathing]](http://i.imgur.com/NUyttbn.gif)
 
 ## Installation
 Download or clone repo then
