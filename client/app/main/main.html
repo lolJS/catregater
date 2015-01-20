@@ -1,0 +1,39 @@
+<div class="row" ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="section-info center {{ state }}">
+  <h3><span class="{{ stateIcon }}"></span> {{ state }}</h3>
+  <p ng-show="!subreddits">{{ message }}.</p>
+  <p ng-show="subreddits">{{ message }} <span ng-repeat="sub in subreddits"><a ng-href="http://www.reddit.com/r/{{ sub }}">/r/{{ sub }}</a>{{ $last ? '' : ($index == subreddits.length - 2) ? ' &amp; ' : ', ' }}</span>.</p>
+</div>
+
+<div class="row">
+  <div infinite-scroll='bricks.nextPage()' infinite-scroll-disabled='bricks.busy' infinite-scroll-distance='0.5'>
+  	<div masonry='{ "itemSelector": ".masonry-brick", "columnWidth": 28, "gutter": 1, "isFitWidth": true, "transitionDuration": 0 }' class="center" >
+      <div masonry-tile class="masonry-brick view view-second" data-ng-repeat="image in images">
+      	<a ng-href="{{ image.thumb }}" class="fancybox" fancybox>
+          <img ng-src="{{ image.thumb }}" imgerror="onImgError" title="{{ image.title }}" />
+        </a>
+        <div class="mask"></div>
+        <div class="content">
+          <div class="info">
+          	<a ng-href="http://www.reddit.com{{ image.permalink }}" title="{{ image.title }}"><h2 ng-bind-html="image.title"></h2></a>
+          	<ul class="material-buttons">
+              <li><a ng-href="http://www.reddit.com{{ image.permalink }}" title="{{ image.title }}"><span class="fa fa-reddit"></span></a></li>
+              <li><span class="fa fa-arrow-up" title="Up votes"></span> {{ image.upvotes }}</li>
+              <li><a ng-href="{{ image.url }}" title="{{ image.title }}"><span class="fa fa-photo"></span></a></li>
+              <li><a ng-href="{{ image.thumb }}" class="fancybox" fancybox title="Click me to zoom."><span class="fa fa-search"></span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div ng-show="bricks.busy" style="text-align: center; color: #fff;"><span class="fa fa-spin fa-lg fa-spinner"></span></div>
+    <div style='clear: both;'></div>
+  </div>
+</div>
+
+<div id="fancybox-content"></div>
+
+<footer class="footer">
+  <p>End of the hottest fap material on reddit.</p>
+</footer>

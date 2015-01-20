@@ -1,0 +1,136 @@
+@import 'bootstrap/less/bootstrap.less';
+@import 'font-awesome/less/font-awesome.less';
+@import url(http://fonts.googleapis.com/css?family=Bitter:400,700);
+
+@icon-font-path: '/bower_components/bootstrap/fonts/';
+@fa-font-path: '/bower_components/font-awesome/fonts';
+
+/**
+ * App-wide Styles
+ */
+
+body { background-color: #222; }
+
+.glyphicon-large {
+  font-size: 1.33333em;
+  line-height: 0.75em;
+  vertical-align: -15%;
+}
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+img {
+	max-width: 370px;
+}
+
+/* Custom container */
+.container-full {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.navbar {
+  background-color: #212427;
+  background-image: linear-gradient(to bottom, #292C2F 0px, #191C1F 100%);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 0px 1px rgba(31, 31, 31, 0.66) inset, 0px 0px 10px rgba(0, 0, 0, 0.75), 0px 0px 10px rgba(0, 0, 0, 0.75);
+  border-bottom: #555;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.navbar-nav {
+  border-left: 1px solid rgba(0,0,0,0.5);
+}
+
+.navbar-default .navbar-nav > li > a {
+  border-width: 0px 1px;
+  border-style: solid;
+  border-color: transparent rgba(0, 0, 0, 0.5) transparent rgba(255, 255, 255, 0.05);
+  background-color: transparent;
+  transition-property: color, text-shadow, #454545, box-shadow, border-color, padding;
+  transition-duration: 0.25s;
+  text-align: center;
+}
+
+.navbar-default .navbar-nav > li:hover {
+  box-shadow: 0px 0px 0.75em rgba(0, 0, 0, 0.2) inset;
+}
+
+.navbar-default  .navbar-nav > .active > a {
+  background: transparent;
+}
+
+.navbar-brand strong {
+  color: #fefefe;
+}
+
+.navbar-brand {
+  font-family: Bitter;
+  color: #fefefe;
+}
+
+.navbar li {
+  padding: 0;
+  margin: 0;
+}
+
+/* Custom navbar */
+.navbar-brand ,.navbar-nav>li>a {
+  padding-left: 20px;
+  padding-right: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  background-color: rgba(72, 176, 164, 0.2);
+  color: #fff;
+  box-shadow: 0px 0px 0.75em rgba(0, 0, 0, 0.2) inset;
+}
+
+.navbar-default .navbar-nav > .active > a.hot,
+.navbar-default .navbar-nav > .active > a.hot:hover, 
+.navbar-default .navbar-nav > .active > a.hot:focus, 
+.navbar-default .navbar-nav > li > a.hot:hover, 
+.navbar-default .navbar-nav > li > a.hot:focus {
+  background-color: rgba(128, 41, 41, 0.2);
+  color: #93572A;
+}
+
+.navbar-default .navbar-nav > .active > a.random,
+.navbar-default .navbar-nav > .active > a.random:hover, 
+.navbar-default .navbar-nav > .active > a.random:focus, 
+.navbar-default .navbar-nav > li > a.random:hover, 
+.navbar-default .navbar-nav > li > a.random:focus {
+  background-color: rgba(44, 212, 170, 0.1);
+  color: #2CD4AA;
+}
+
+
+
+
+.row .center {
+  margin: 0 auto;
+}
+
+// injector
+@import 'main/main.less';
+// endinjector
+
+.footer {
+  border-top: 1px solid #3B3B3B;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75);
+  font-family: Bitter;
+  font-size: 1.7em;
+  color: #e3e3e3;
+}
